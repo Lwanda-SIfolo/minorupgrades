@@ -1,0 +1,20 @@
+
+---
+- hosts: UAT
+  # gather_facts: no
+
+  tasks:
+    - name: Run a local script
+      script: /home/ubuntu/minor_version_upgrade.sh -e myEnv -m 20 -u $USER  -p
+      environment:
+        PATH: "{{ ansible_env.PATH }}:/usr/local/"
+        GOPATH: "/root/work"
+      register: result_sys_info
+
+    - name: Print out the result_sys_info.stdout
+      debug:
+        msg: "{{ result_sys_info.stdout_lines }}"
+
+    - name: Print out the result_sys_info.stderr
+      debug:
+        msg: "{{ result_sys_info.stderr }}"
