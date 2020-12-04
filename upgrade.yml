@@ -1,6 +1,6 @@
 
 ---
-- hosts: UAT
+- hosts: 13.244.120.157
   # gather_facts: no
 
   tasks:
