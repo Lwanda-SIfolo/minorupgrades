@@ -5,7 +5,7 @@
 
   tasks:
     - name: Run a local script
-      script: /var/lib/jenkins/workspace/deploy_git/minor_version_upgrade.sh -e myEnv -m 20 -u $USER  -p
+      script: /var/lib/jenkins/workspace/deploy_git/minorupgrades/minor_version_upgrade.sh -e myEnv -m 20 -u $USER  -p
       environment:
         PATH: "{{ ansible_env.PATH }}:/usr/local/"
         GOPATH: "/root/work"
