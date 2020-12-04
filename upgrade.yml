@@ -1,7 +1,7 @@
 
 ---
 - hosts: 13.244.120.157
-  # gather_facts: no
+  gather_facts: yes
 
   tasks:
     - name: Run a local script
