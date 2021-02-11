@@ -1,0 +1,13 @@
+---
+- hosts: EC
+  become: yes
+  tasks:
+    - name: Checkout repo
+      git:
+        repo=https://github.com/moodle/moodle.git
+        dest=/var/www/html/moodle
+        update=yes
+        accept_hostkey=yes
+      register: gitresult
+
+    - debug: msg="SHA-1 before git update is {{ gitresult.before }}"
