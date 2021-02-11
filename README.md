@@ -1,1 +1,1 @@
-# minorupgrades script
+# minorupgrades scripts
